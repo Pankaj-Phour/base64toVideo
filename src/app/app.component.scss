@@ -53,12 +53,25 @@ video{
     max-width: 700px;
     width: 97%;
     text-align: center;
-    background-color:#337ab7;
     padding: 10px;
     border: 2px solid white;
     border-radius: 10px;
     cursor: pointer;
     font-size: 22px;
     font-family: 'roboto';
+}
+.active{
+    background-color:#337ab7;
     color: white;
+}
+.disable{
+    background-color: #cbcbcb;
+    color: #999999;
+    cursor: not-allowed;
+}
+.hidden{
+    visibility: hidden;
+}
+.visible{
+    visibility: visible;
 }
