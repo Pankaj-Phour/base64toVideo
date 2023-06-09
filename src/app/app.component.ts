@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,10 @@ export class AppComponent implements OnInit {
   form:FormGroup;
   convertor:boolean = false;
   media:boolean = false;
-  constructor(private _fb:FormBuilder){
+  videoURL:any;
+  file:any;
+  @ViewChild('videoEl') videoEl:ElementRef;
+  constructor(private _fb:FormBuilder,private dom:DomSanitizer){
 
   }
 
@@ -29,13 +33,19 @@ export class AppComponent implements OnInit {
         else{
           this.convertor = false;
           this.media = false;
+          this.videoURL = undefined;
         }
         
       })
   }
 
-  convert(){
+  async convert(){
     this.media = true;
+    let value = this.form.get('input').value;
+    let f = await fetch(value);
+    let blob = await f.blob();
+    const blobUrl = URL.createObjectURL(blob);
+    this.videoURL = this.dom.bypassSecurityTrustUrl(blobUrl)
   }
 
   
