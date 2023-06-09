@@ -1,5 +1,17 @@
 # Base64toVideo
 
+## View Project 
+[Base64 to video Convertor](https://base64tovideo.netlify.app)
+
+# View Portfolio
+[Pankaj Phour](https://pankajphour.netlify.app)
+
+
+# Important details
+In this project we are taking base64 as input from the user and then we are converting that base64 to a video file 
+First of all we fetch that bsae64 and convert that to a blob file then we download that blob file as our video. If you need any 
+other info/help you can contact me at [GMAIL](https://pankaj.phour70@gmail.com) or you can connect with me on my [Github](https://github.com/pankaj-phour)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.1.
 
 ## Development server
