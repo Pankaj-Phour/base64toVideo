@@ -1,0 +1,16 @@
+<div class="body">
+  <div class="container">
+    <div class="heading">
+      Base 64 to Video Convertor 
+    </div>
+    <div class="main">
+      <div class="top" [formGroup]="form">
+        <textarea rows="15" cols="80" placeholder="Enter base 64 here" formControlName="input"></textarea>
+      </div>
+      <button class="button" [ngClass]="!convertor ? 'disable' : 'active'" type="button" [disabled]="!convertor" (click)="convert()">Convert to Video</button>
+      <div class="result" [ngClass]="media ? 'visible' : 'hidden'">
+        <video [src]="videoURL" controls #videoEl></video> </div>
+      <a class="button" [href]="videoURL" download="videoURL" [ngClass]="media ? 'visible active' : 'hidden'">Download Video</a>
+    </div>
+  </div>
+</div>
